@@ -1,0 +1,65 @@
+---
+title: "Pricing Game"
+author: "Greg Gunn"
+date: "September 21, 2015"
+output: slidy_presentation
+---
+
+## Pricing Game
+
+We have a cool project the next couple of months.  I saw a neat idea on the [Freakonometrics Blog](http://freakonometrics.hypotheses.org/20191) and thought we could use this data to do some of our own data analysis.  Their actual intent is to use this data as an actuarial kaggle of sorts, but our skill sets in this group are more varied so we will do a few different analyses.
+
+The plan, as Ben mentioned in his email, is to split up into groups, work together over the next month to do the analyses, then come back for our next meeting on October 19th and have each group present their findings.
+
+
+## Plan for this evening: {.bigger}
+
+1. I'll go over what the data is and how to get it.
+2. We'll go over a few proposed analysis ideas, and brainstorm a few others
+3. We'll split up into groups based on analyses
+
+## Getting the Data
+
+Below is the hello world code chunk needed to access the data.  I have also included a matching .R file in the github repository.  We'll send out a link to the github in the meetup: [github.com/charlottecrug](github.com/charlottecrug) and look at the Pricing Game repository.
+
+```{r}
+
+training <- read.csv2( "http://freakonometrics.free.fr/training.csv")
+pricing <- read.csv2( "http://freakonometrics.free.fr/pricing.csv")
+
+
+```
+
+* Note the use of the csv2 function.  This is because in Europe csv's are seperated by semicolons.
+
+## Variables
+
+[Here is a full description of what the variables mean](http://f.hypotheses.org/wp-content/blogs.dir/253/files/2015/08/Pricing_ENG.pdf) 
+
+Below is what the actual data valuse look like.
+
+```{r, warning=FALSE}
+
+library(dplyr)
+
+glimpse(training)
+glimpse(pricing)
+
+```
+
+## Proposed Analyses
+
+> - Group 1 (Beginner):  Data Quality - analyze the data looking for missing values, outliers, and other oddities that might skew the results of a downstream analysis.  Also, this team will do basic univariate and bivariate analysis and report those relationships.  This team will probably lean more on built-in R functionality and the dplyr package.
+> - Group 2 (Intermediate):  Data Visualization - using ggplot, ggvis, rCharts, or any other charting packages to visualize the data.  
+> - Group 3 (Intermediate):  Dashboarding - use Shiny to build interactive dashboards, which also assumes heavy usage of other data visualization packages for the embedded charts.
+> - Group 4 (Intermediate):  Predictive Modeling - building predictive models to assess who is most likely to have a claim.  Our own mini-kaggle exercise.
+> - Group 5 (Advanced):  Actuarial Modeling - try to work through the same assignment from the Pricing Game to build predictive models assessing who is most likely to have a claim, taking into account pricing and losses.
+> - **Others?**
+
+## Let's Split Up Gang
+
+![](Scooby Doo.jpg)
+
+Decide which analysis group you are interested in.  Get together and come up with a rough plan, and elect a representative for the group.
+
+Let me know who your representative is.  Make sure to exchange contact information to get in touch between meetings.
